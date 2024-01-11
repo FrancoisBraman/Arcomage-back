@@ -1,0 +1,5 @@
+### get cards
+GET http://localhost:5500/cards
+
+### get one card
+GET http://localhost:5500/cards/45

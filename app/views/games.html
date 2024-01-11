@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackermage API - Games</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/games.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Games</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="games">
+    </div>
+  </main>
+</body>
+</html>
+
+<script type="module">
+  import { io } from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js';
+  const socket = io(window.location.host, {
+    path: '/games'
+  });
+
+  socket.on('connect', () => {
+    console.log('Socket.IO connected');
+  });
+
+  socket.on('connection', (data) => {
+    data.forEach((game) => {
+      const gameDiv = document.createElement('div');
+      gameDiv.classList.add('game');
+      gameDiv.innerHTML = `
+        <h2>${game}</h2>
+      `;
+      document.querySelector('.games').appendChild(gameDiv);
+    });
+  });
+
+  socket.on('update', (data) => {
+    document.querySelector('.games').innerHTML = '';
+    data.forEach((game) => {
+      const gameDiv = document.createElement('div');
+      gameDiv.classList.add('game');
+      gameDiv.innerHTML = `
+        <h2>${game}</h2>
+      `;
+      document.querySelector('.games').appendChild(gameDiv);
+    });
+  });
+</script>

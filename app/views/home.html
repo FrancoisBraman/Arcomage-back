@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackermage API - Home</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="/games">Games</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="card">
+      <h2>REST</h2>
+      <ul>
+        <li><a href="/cards">/cards</a></li>
+        <li><a href="/cards/42">/cards/:id</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Socket</h2>
+      <ul>
+        <li>EMIT "init"</li>
+        <li>ON "play"</li>
+        <li>EMIT "play confirm"</li>
+        <li>ON "discard"</li>
+        <li>EMIT "discard confirm"</li>
+        <li>EMIT "round"</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Debug</h2>
+      <ul>
+        <li><a href="/games">Games list</a></li>
+      </ul>
+    </div>
+
+  </main>
+</body>
+
+</html>

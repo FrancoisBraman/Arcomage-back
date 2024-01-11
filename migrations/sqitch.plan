@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=arcomage
+
+init 2023-05-09T13:53:37Z Hassan <layeb.hassan@gmail.com> # DB init
+new_cards 2023-05-11T08:02:50Z François <francoisbraman@gmail.com> # seeding more cards to upgrade the game
